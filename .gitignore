@@ -2,3 +2,4 @@ back-end/app/__pycache__/*
 back-end/app/api/__pycache__/*
 .venv/*
 back-end/__pycache__/*
+back-end/util/__pycache__/*
