@@ -82,18 +82,29 @@ def dify_test():
             api_key=current_app.config['DIFY_API_KEY']
         )
         if res.status_code == 200:
-            messages=[]
+            message={
+                "task_id": "191608a0-7a7c-43c9-8286-631f59e6e211", 
+                "id": "92e32983-0e5f-421d-bd08-9cc7bc523d5c", 
+                "message_id": "92e32983-0e5f-421d-bd08-9cc7bc523d5c", 
+                "conversation_id": "8b81eacc-4d3d-4f7e-b761-a44edfee60ea", 
+                'answer':'',
+                "metadata": {}
+            }
             def generate(res):
                 for chunk in res.iter_lines():
                     if chunk:
                         data=json.loads(chunk.decode('utf-8').replace('data:',''))
                         if data['event']=='message':
-                            messages.append(data)
+                            message['answer']+=data['answer']
                             yield data['answer']
                         elif data['event']=='message_end':
-                            messages.append(data)
-                            print(messages)
-                            yield jsonify(data)
+                            message['task_id']=data['task_id']
+                            message['id']=data['id']
+                            message['message_id']=data['message_id']
+                            message['conversation_id']=data['conversation_id']
+                            message['metadata']=data['metadata']
+                            print(message)
+                            yield '\n'+message['answer']
             return generate(res)
         else:
             return error_api(res)
