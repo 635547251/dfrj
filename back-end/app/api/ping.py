@@ -91,6 +91,8 @@ def dify_test():
                             messages.append(data)
                             yield data['answer']
                         elif data['event']=='message_end':
+                            messages.append(data)
+                            print(messages)
                             yield jsonify(data)
             return generate(res)
         else:
