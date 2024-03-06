@@ -35,13 +35,13 @@ def configure_blueprints(app):
 def configure_extensions(app):
     '''Configures the extensions.'''
     # Enable CORS
-    cors.init_app(app)
+    # cors.init_app(app)
     # Init Flask-SQLAlchemy
-    db.init_app(app)
+    # db.init_app(app)
     # Init Flask-Migrate
-    migrate.init_app(app, db)
+    # migrate.init_app(app, db)
     # Init Flask-Mail
-    mail.init_app(app)
+    # mail.init_app(app)
 
 
 def configure_before_handlers(app):
