@@ -1,0 +1,20 @@
+{
+  "name": "miniapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dayjs": "^1.11.10",
+    "uview-plus": "^3.1.45"
+  },
+  "devDependencies": {
+    "sass": "^1.71.1",
+    "sass-loader": "^10.5.2"
+  }
+}
