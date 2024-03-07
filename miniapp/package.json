@@ -10,7 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dayjs": "^1.11.10",
     "uview-plus": "^3.1.45"
   },
   "devDependencies": {
