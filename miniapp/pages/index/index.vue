@@ -1,24 +1,24 @@
 <template>
-	<view class="content">
-		<image class="logo" src="/static/logo.png"></image>
-		<view class="text-area">
-			<text class="title">{{title}}</text>
-		</view>
+	<view class='content'>
+		<image class="background" src="/static/bg.webp" mode="aspectFill"></image>
+		<button class="image-button" @click="handleClick">开始占卜</button>
 	</view>
 </template>
 
 <script>
 	export default {
 		data() {
-			return {
-				title: 'Hello'
-			}
+			return {}
 		},
 		onLoad() {
 
 		},
 		methods: {
-
+			handleClick: function() {
+				uni.navigateTo({
+					url: '/pages/invoke/invoke'
+				});
+			}
 		}
 	}
 </script>
@@ -31,22 +31,21 @@
 		justify-content: center;
 	}
 
-	.logo {
-		height: 200rpx;
-		width: 200rpx;
-		margin-top: 200rpx;
-		margin-left: auto;
-		margin-right: auto;
-		margin-bottom: 50rpx;
-	}
-
-	.text-area {
+	.background {
+		height: 100vh;
+		width: 100%;
 		display: flex;
 		justify-content: center;
+		align-items: center;
 	}
 
-	.title {
-		font-size: 36rpx;
-		color: #8f8f94;
+	.image-button {
+		background-color: #ffd35c;
+		color: black;
+		width: 80%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 	}
 </style>

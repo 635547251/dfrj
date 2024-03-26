@@ -1,0 +1,1 @@
+<view class="content"><image class="background" src="/static/bg.webp" mode="aspectFill"></image><button class="image-button" bindtap="{{a}}">开始占卜</button></view>

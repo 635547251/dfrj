@@ -1,0 +1,1 @@
+<view class="chat-container"><view class="messages"><view wx:for="{{a}}" wx:for-item="message" wx:key="c" class="message"><view class="{{['message-content', message.b && 'mine']}}">{{message.a}}</view></view></view><view class="input-container"><button bindtap="{{b}}">发送</button><input bindtap="{{c}}" placeholder="输入消息" value="{{d}}" bindinput="{{e}}"/></view></view>
